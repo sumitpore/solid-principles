@@ -14,13 +14,13 @@ Tips:
 4. Avoid Large classes and long methods. Break long methods in small methods
 
 **Example Link**
-https://google.com
+<https://github.com/sumitpore/solid-principles/tree/master/SRP%20and%20DIP>
 
-**Small Methods Before**
+**Small Methods Before:**
 
 ![Alt text](/images/sip-before.png?raw=true "Small Methods Before")
 
-**Small Methods After**
+**Small Methods After:**
 
 ![Alt text](/images/sip-after.png?raw=true "Small Methods After")
 
@@ -35,7 +35,7 @@ Tips:
 3. Implement Plug-in like mechanism
 
 **Example Link**
-https://google.com
+<https://github.com/sumitpore/solid-principles/tree/master/OCP>
 
 3.Liskov Substitution Principle
 -------------
@@ -49,7 +49,7 @@ Tips:
 2. Use Interface Segregation Principle to solve the LSP Problems
 
 **Example Link**
-https://google.com
+<https://github.com/sumitpore/solid-principles/tree/master/LSP>
 
 4.Interface Segregation Principle
 -------------
@@ -62,7 +62,7 @@ Tips:
 1. Create small interfaces with what you just need.
 
 **Example Link**
-https://google.com
+<https://github.com/sumitpore/solid-principles/tree/master/ISP>
 
 5.Dependency Injection Principle
 -------------
@@ -86,7 +86,7 @@ Tips:
                 ii. Property (Setter) Injection
 
 **Example Link**
-https://google.com
+<https://github.com/sumitpore/solid-principles/tree/master/SRP%20and%20DIP>
 
 Basics of MVC
 -------------
