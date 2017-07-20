@@ -80,10 +80,10 @@ Tips:
 4. Avoid use of ‘new’ keyword in the method
 5. Avoid using static methods or properties in the method
 6. Use Dependency injection techniques.
-        * Dependency injection is a technique that is used to allow calling code to inject the dependencies a class needs when it is instantiated.
-        * Primary Dependency Injection Techniques
-                ** Constructor Injection
-                ** Property (Setter) Injection
+    1. Dependency injection is a technique that is used to allow calling code to inject the dependencies a class needs when it is instantiated.
+    2. Primary Dependency Injection Techniques
+        1. Constructor Injection
+        2. Property (Setter) Injection
 
 **Example Link**
 <https://github.com/sumitpore/solid-principles/tree/master/SRP%20and%20DIP>
