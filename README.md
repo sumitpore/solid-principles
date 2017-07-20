@@ -17,8 +17,10 @@ Tips:
 https://google.com
 
 **Small Methods Before**
+![Alt text](/images/sip-before.png?raw=true)
 
 **Small Methods After**
+![Alt text](/images/sip-after.png?raw=true)
 
 2.Open Close Principle
 -------------
@@ -96,6 +98,8 @@ Controller => Business Logic (Controls Program flow)
 * Model should interact with other Models and Controllers
 * View and Model should not interact with each other directly.
 
+![Alt text](/images/mvc.png?raw=true)
+
 Example:
 1. Let’s assume, you are showing a page where list of all users are being displayed along with a button to add new user. This display part will come from ‘View’. When admin clicks a button to Add a new user, program will trigger the Controller associated with Adding new user action.
 2. That controller will call the respective action. That action will perform all the necessary validations like if current user is allowed to add new user or not, or admin has entered valid data or not.
@@ -103,7 +107,9 @@ Example:
 4. Now action will take that information, it will decide which view should be loaded and pass the information it obtained from Model to that view.
 
 Following could be the pseudo controller for it.
-** Image **
+
+![Alt text](/images/psuedo-controller.png?raw=true)
+
 In above example, you will have at least two models
 * Database Model (which has required methods to interact with database)
 * User Model (which has required methods to operate on User related data)
