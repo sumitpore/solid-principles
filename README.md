@@ -16,11 +16,9 @@ Tips:
 **Example Link**
 https://google.com
 
-**Small Methods Before**
-![Alt text](/images/sip-before.png?raw=true)
+![Alt text](/images/sip-before.png?raw=true "Small Methods Before")
 
-**Small Methods After**
-![Alt text](/images/sip-after.png?raw=true)
+![Alt text](/images/sip-after.png?raw=true "Small Methods After")
 
 2.Open Close Principle
 -------------
