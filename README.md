@@ -92,7 +92,9 @@ Basics of MVC
 -------------
 
 > Model => Data Layer (Data layer contains all the methods related to the data. It is not limited to the database.)
+
 > View => UI (Displays the output on screen)
+
 > Controller => Business Logic (Controls Program flow)
 
 * View should interact with other views and Controllers
