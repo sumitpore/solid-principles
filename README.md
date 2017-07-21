@@ -106,7 +106,8 @@ Basics of MVC
 
 In modern php frameworks, you will find one more layer i.e. 'Routing'. This layer is responsbile for deciding a controller to be invoked for incoming requests.
 
-![Alt text](http://laravelbook.com/images/laravel-architecture/laravel-mvc-components.png Credits: http://laravelbook.com/laravel-architecture/)
+![](http://laravelbook.com/images/laravel-architecture/laravel-mvc-components.png)
+*Credits: http://laravelbook.com/laravel-architecture/*
 
 Example:
 1. Let’s assume, you are showing a page where list of all users are being displayed along with a button to add new user. This display part will come from ‘View’. When admin clicks a button to Add a new user, program will trigger the Controller associated with Adding new user action.
