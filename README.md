@@ -91,7 +91,7 @@ Tips:
 Basics of MVC
 -------------
 
-> Model => Data Layer (Data layer contains all the methods related to the data. It is not limited to the database.)
+> Model => Data Layer (Data layer contains all the methods related to the data. It is not limited to the database.) It should enforce all the business rules that apply to that data.
 
 > View => UI (Displays the output on screen)
 
@@ -103,6 +103,10 @@ Basics of MVC
 * View and Model should not interact with each other directly.
 
 ![Alt text](/images/mvc.png?raw=true)
+
+In modern php frameworks, you will find one more layer i.e. 'Routing'. This layer is responsbile for deciding a controller to be invoked for incoming requests.
+
+![Alt text](http://laravelbook.com/images/laravel-architecture/laravel-mvc-components.png Credits: http://laravelbook.com/laravel-architecture/)
 
 Example:
 1. Let’s assume, you are showing a page where list of all users are being displayed along with a button to add new user. This display part will come from ‘View’. When admin clicks a button to Add a new user, program will trigger the Controller associated with Adding new user action.
