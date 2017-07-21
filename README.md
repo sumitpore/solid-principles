@@ -16,11 +16,11 @@ Tips:
 **Example Link**
 <https://github.com/sumitpore/solid-principles/tree/master/SRP%20and%20DIP>
 
-**Small Methods Before:**
+**Before SRP:**
 
 ![Alt text](/images/sip-before.png?raw=true "Small Methods Before")
 
-**Small Methods After:**
+**After SRP:**
 
 ![Alt text](/images/sip-after.png?raw=true "Small Methods After")
 
