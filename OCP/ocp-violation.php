@@ -1,26 +1,5 @@
 <?php
 
-class PetrolPump
-{
-    public function putPetrolInAutoMobile(AutoMobile $vehicle)
-    {
-        if ($vehicle->getType() == 1)
-            $this->putPetrolInCar($vehicle);
-        elseif ($vehicle->getType() == 2)
-            $this->putPetrolInMotorcycle($vehicle);
-    }
-
-    public function putPetrolInCar(Car $car)
-    {
-        $car->setTankCapacity(50);
-    }
-    public function putPetrolInMotorcycle(Motorcycle $motorcycle)
-    {
-        $motorcycle->setTankCapacity(20);
-    }
-
-}
-
 class AutoMobile
 {
     protected $automobileType;
@@ -43,4 +22,25 @@ class Car extends AutoMobile
 class Motorcycle extends AutoMobile
 {
     protected $automobileType = 2;
+}
+
+class PetrolPump
+{
+    public function putPetrolInAutoMobile(AutoMobile $vehicle)
+    {
+        if ($vehicle->getType() == 1)
+            $this->putPetrolInCar($vehicle);
+        elseif ($vehicle->getType() == 2)
+            $this->putPetrolInMotorcycle($vehicle);
+    }
+
+    public function putPetrolInCar(Car $car)
+    {
+        $car->setTankCapacity(50);
+    }
+    public function putPetrolInMotorcycle(Motorcycle $motorcycle)
+    {
+        $motorcycle->setTankCapacity(20);
+    }
+
 }
