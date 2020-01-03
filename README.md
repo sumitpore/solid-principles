@@ -42,7 +42,7 @@ Tips:
 
 Functions that use references to base classes must be able to use subjects of derived classes without knowing it.
 
-Try to place object of child class at the place of parent class and check if your program works right. If you think, your program will throw an error if you replace object of parent class with child class, then it is violating Liskov Substitution Principle.
+Try to place object of child class at the place of parent class and check if your program works right. If you think, your program will throw an error when you replace object of parent class with child class, then it is violating Liskov Substitution Principle.
 
 Tips:
 1. Avoid usage of instanceof and is_a functions
