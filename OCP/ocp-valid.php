@@ -2,34 +2,64 @@
 
 abstract class AutoMobile
 {
-    protected $tankCapacity;
-
-    public function setTankCapacity($tankCapacity)
-    {
-        $this->tankCapacity = $tankCapacity;
-    }
-
-    abstract public function putPetrol();
+    abstract public function getSupportedFuel();
 }
 
-class Car extends AutoMobile
+abstract class Car extends AutoMobile
 {
-    public function putPetrol() {
-        $this->setTankCapacity(50);
+}
+
+class PetrolCar extends Car
+{
+    public function getSupportedFuel()
+    {
+        return 'Petrol';
+    }
+}
+
+class DieselCar extends Car
+{
+    public function getSupportedFuel()
+    {
+        return 'Diesel';
     }
 }
 
 class Motorcycle extends AutoMobile
 {
-    public function putPetrol() {
-        $this->setTankCapacity(20);
+    public function getSupportedFuel()
+    {
+        return 'Petrol';
     }
 }
 
-class PetrolPump
+class FuelPump
 {
-    public function putPetrolInAutoMobile(AutoMobile $vehicle)
+    public function putFuelInAutoMobile(AutoMobile $vehicle)
     {
-        $vehicle->putPetrol();
+        $supportedFuel = $vehicle->getSupportedFuel();
+        $this->fillFuel($supportedFuel);
     }
+
+    public function fillFuel($fuel)
+    {
+        if($fuel === 'Petrol') {
+            $this->fillPetrol();
+        }
+        
+        if($fuel === 'Diesel') {
+            $this->fillDiesel();
+        }
+    }
+
+    public function fillPetrol()
+    {
+        //
+    }
+
+    public function fillDiesel()
+    {
+        //
+    }
+
 }

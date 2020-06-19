@@ -1,6 +1,36 @@
 <?php
 
 /**
+ * This class is refactored to achieve Single Responsibility Principle
+ */
+class Reporter {
+
+  public function sendReport(DBConnectionInterface $dbHandler, EmailInterface $emailHandler){
+
+    $report = $this->generateReport($dbHandler);
+
+    //Sending Email
+    $emailHandler->sendEmail('testuser@gmail.com', 'Authentication Report', $report);
+  }
+
+  public function generateReport(DBConnectionInterface $dbHandler) {
+      $message = '';
+
+      //getting list of all users
+      $users = $dbHandler->query('SELECT id, username, last_logged_in_at FROM users where last_logged_in_at >= 23/05/2016 00:00:00'); 
+
+      foreach($users as $singleUser){
+          $message .= "Id: {$singleUser->id} " . PHP_EOL;
+          $message .= "Username: {$singleUser->username} " . PHP_EOL;
+      }
+
+      return $message;
+  }
+
+}
+
+
+/**
  * This interface is to achieve Dependency Inversion Principle
  */
 interface DBConnectionInterface {
@@ -45,43 +75,18 @@ interface EmailInterface {
   public function sendEmail($to, $subject, $message);
 }
 
-class PlainEmail {
+class PlainEmail implements EmailInterface {
   public function sendEmail($to, $subject, $message) {
     //code to send Plain Emails
   }
 }
 
-class HTMLEmail {
+class HTMLEmail implements EmailInterface {
   public function sendEmail($to, $subject, $message) {
     //code to send HTML Emails
   }
 }
 
-/**
- * This class is refactored to achieve Single Responsibility Principle
- */
-class Reporter {
-
-  public function generateReport(DBConnectionInterface $dbHandler) {
-      $message = '';
-
-      //getting list of all users
-      $users = $dbhandler->query('SELECT id, username, last_logged_in_at FROM users where last_logged_in_at >= 23/05/2016 00:00:00'); 
-
-      foreach($users as $singleUser){
-          $message .= "Id: {$singleUser->id} " . PHP_EOL;
-          $message .= "Username: {$singleUser->username} " . PHP_EOL;
-      }
-
-      return $message;
-  }
-
-  public function sendReport(DBConnectionInterface $dbHandler, EmailInterface $emailHandler){
-
-      $report = $this->generateReport($dbHandler);
-
-      //Sending Email
-      $emailHandler->sendEmail('testuser@gmail.com', 'Authentication Report', $report);
-  }
-
-}
+$emailHandler = isSendingToSystem() ? new PlainEmail() : new HTMLEmail();
+$dbHandler = new OracleConnection();
+$reporter = new Reporter($dbHandler, $emailHandler);

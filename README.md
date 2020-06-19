@@ -78,8 +78,7 @@ Tips:
 2. Avoid hidden dependencies.
 3. Extract dependencies into interfaces and pass interfaces as parameters
 4. Avoid use of ‘new’ keyword in the method
-5. Avoid using static methods or properties in the method
-6. Use Dependency injection techniques.
+5. Use Dependency injection techniques.
     1. Dependency injection is a technique that is used to allow calling code to inject the dependencies a class needs when it is instantiated.
     2. Primary Dependency Injection Techniques
         1. Constructor Injection

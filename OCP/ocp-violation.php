@@ -1,46 +1,45 @@
 <?php
 
-class AutoMobile
+abstract class AutoMobile
 {
-    protected $automobileType;
-    protected $tankCapacity;
-    public function getType()
-    {
-        return $this->automobileType;
-    }
-    public function setTankCapacity($tankCapacity)
-    {
-        $this->tankCapacity = $tankCapacity;
-    }
 }
 
-class Car extends AutoMobile
+abstract class Car extends AutoMobile
 {
-    protected $automobileType = 1;
+}
+
+class PetrolCar extends Car
+{
+}
+
+class DieselCar extends Car
+{
 }
 
 class Motorcycle extends AutoMobile
 {
-    protected $automobileType = 2;
 }
 
-class PetrolPump
+class FuelPump
 {
-    public function putPetrolInAutoMobile(AutoMobile $vehicle)
+    public function putFuelInAutoMobile(AutoMobile $vehicle)
     {
-        if ($vehicle->getType() == 1)
-            $this->putPetrolInCar($vehicle);
-        elseif ($vehicle->getType() == 2)
-            $this->putPetrolInMotorcycle($vehicle);
+        if (is_subclass_of($vehicle, PetrolCar::class))
+            $this->fillPetrol();
+        if (is_subclass_of($vehicle, DieselCar::class))
+            $this->fillDiesel();
+        elseif (is_subclass_of($vehicle, Motorcycle::class))
+            $this->fillPetrol();
     }
 
-    public function putPetrolInCar(Car $car)
+    public function fillPetrol()
     {
-        $car->setTankCapacity(50);
+        //
     }
-    public function putPetrolInMotorcycle(Motorcycle $motorcycle)
+
+    public function fillDiesel()
     {
-        $motorcycle->setTankCapacity(20);
+        //
     }
 
 }
